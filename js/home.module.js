@@ -1,3 +1,4 @@
+import { Details } from "./details.module.js";
 import { UI } from "./ui.module.js";
 export class Home {
   category = "";
@@ -5,7 +6,7 @@ export class Home {
     this.ui = new UI();
     this.getGames("MMORPG");
     this.clickLink();
-    this.ui.controlNavbar()
+    this.ui.controlNavbar();
   }
   clickLink() {
     const allLinks = document.querySelectorAll(".nav-link");
@@ -19,9 +20,8 @@ export class Home {
       });
     });
   }
-  
   async getGames(category) {
-    this.ui.showLoading()
+    this.ui.showLoading();
     const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`;
     const options = {
       method: "GET",
@@ -33,9 +33,11 @@ export class Home {
     const response = await fetch(url, options);
     const result = await response.json();
     this.ui.displayGames(result);
-    this.ui.hideLoading()
-
-    this.ui.getclickedID();
+    document.querySelectorAll(".ccc").forEach((elemnt) => {
+      elemnt.addEventListener("click", () => {
+        const gameDetails = new Details(elemnt.getAttribute("id"));
+      });
+    });
+    this.ui.hideLoading();
   }
-
 }

@@ -32,7 +32,6 @@ nav {
   background-color: rgb(58, 73, 123);
   position: sticky !important;
   margin: auto;
-  display: flex !important;
   align-items: center !important;
   border-radius: 20px;
   transition: all 0.5s !important;
@@ -288,25 +287,90 @@ nav li a:hover {
 }
 /* End Loading Screen */
 
-/* Up button */
-#upBtn {
-  color: #dbe3f4;
-  position: fixed;
-  right: 1%;
-  bottom: 50px;
-}
-#upBtn:hover{
-  transform: translateY(-1px) scale(1.01);
+/* Close button */
+.close-outer {
+  position: relative;
+  margin: auto;
+  width: 30px;
   cursor: pointer;
 }
-#upBtn > div {
-  border: 1px solid #dbe3f4;
-  display: inline;
-  padding: 3px ;
-  border-radius: 100px;
+.close-inner {
+  width: inherit;
+  text-align: center;
 }
-#upBtn > div span {
-  font-weight: 700;
+.close-outer label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+  font-weight: 600;
 }
-/* End Up button */
+.close-inner:before,
+.close-inner:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: inherit;
+  background: white;
+  left: 0;
+  transition: all 0.3s ease-in;
+}
+.close-inner:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+.close-inner:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+.close-outer:hover label {
+  opacity: 1;
+}
+.close-outer:hover .close-inner:before,
+.close-outer:hover .close-inner:after {
+  transform: rotate(0);
+}
+.close-outer:hover .close-inner:before {
+  top: 0;
+}
+.close-outer:hover .close-inner:after {
+  bottom: 0;
+}
+/* End Close button */
 
+/* Details */
+.details {
+  display: none;
+  width: 100%;
+  margin: auto;
+  color: white;
+  background-color: rgb(39, 43, 48);
+  height: 100vh;
+  position: absolute;
+  z-index: 666;
+}
+.details-header h2 {
+  font-family: "Nerko One", cursive;
+  color: white;
+  font-size: 38px;
+}
+.details h4 {
+  display: inline;
+  font-size: 20px;
+}
+.details span {
+  background-color: #09c;
+  padding: 0px 5px;
+  border-radius: 6px;
+}
+.details p {
+  margin: 10px 0;
+}
+.details a {
+  color: white;
+  margin-block: 5px;
+  transition: all 0.8s;
+}
+/*ُEnd  Details */

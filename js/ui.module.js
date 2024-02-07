@@ -40,24 +40,25 @@ export class UI {
       });
     });
   }
-  showLoading(){
+  showLoading() {
     document.getElementById("loading").style.display = "flex";
     document.querySelector("body").style.height = "100vh";
+    document.querySelector("body").style.overflow = "hidden";
   }
-  hideLoading(){
+  hideLoading() {
     document.getElementById("loading").style.display = "none";
     document.querySelector("body").style.height = "auto";
+    document.querySelector("body").style.overflow = "auto";
   }
-   controlNavbar(){
+  controlNavbar() {
     window.addEventListener("scroll", () => {
-      if(scrollY >= 212.8000030517578){
-        document.querySelector("nav").style.borderTopRightRadius=0
-        document.querySelector("nav").style.borderTopLeftRadius=0
+      if (scrollY >= 212.8000030517578) {
+        document.querySelector("nav").style.borderTopRightRadius = 0;
+        document.querySelector("nav").style.borderTopLeftRadius = 0;
+      } else {
+        document.querySelector("nav").style.borderTopRightRadius = 20 + "px";
+        document.querySelector("nav").style.borderTopLeftRadius = 20 + "px";
       }
-      else{
-        document.querySelector("nav").style.borderTopRightRadius=20+"px"
-        document.querySelector("nav").style.borderTopLeftRadius=20+"px"
-      }
-    })
+    });
   }
 }
