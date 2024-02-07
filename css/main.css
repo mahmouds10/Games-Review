@@ -1,0 +1,312 @@
+/* Fixed Style */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a,
+span {
+  display: inline-block;
+}
+img {
+  display: inline;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  background-color: rgb(39, 43, 48);
+}
+::selection {
+}
+/* =========================== */
+
+/* Nav Bar */
+nav {
+  top: -2px;
+  background-color: rgb(58, 73, 123);
+  position: sticky !important;
+  margin: auto;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 20px;
+  transition: all 0.5s !important;
+  box-shadow: rgba(0, 0, 0, 0.7) !important;
+  z-index: 7777;
+}
+nav h5 {
+  font-family: "Nerko One", cursive;
+  font-weight: 500;
+  font-size: 20px;
+  vertical-align: middle;
+  color: white !important;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 24px;
+  margin-inline-end: 16px;
+  margin-right: 16px;
+  padding-bottom: 0px !important;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+nav li a {
+  font-family: "Comfortaa", sans-serif !important;
+  font-size: 12.25px !important;
+  font-weight: 400 !important;
+  color: white !important;
+  transition: all 0.5s !important;
+}
+nav li a:hover {
+  color: #09c !important;
+}
+.active-link {
+  color: rgb(0, 153, 204) !important;
+}
+.clicked-navbar {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+/* End Nav bar */
+
+/* Warber */
+.warber {
+  width: 100%;
+}
+.warber img {
+  max-height: 30vh;
+  object-fit: cover;
+}
+/* End Warber */
+
+/* Home */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.176);
+  color: white;
+  filter: grayscale(0.7);
+  transition: all 0.5s;
+}
+.card:hover {
+  filter: grayscale(0);
+  cursor: pointer !important;
+  transform: scale(1.02);
+}
+.tags {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.card-img img {
+  border-radius: 6px;
+}
+.tags h3 {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+  font-family: "Nerko One", cursive;
+  font-size: 18px;
+}
+.tags span {
+  background-color: rgb(13, 110, 253) !important;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: aliceblue !important;
+  padding: 3px 6px;
+}
+.card-text p {
+  text-align: center;
+  opacity: 0.5;
+  margin: 7px;
+  overflow-wrap: break-word;
+}
+.card-footer {
+  padding: 0.3125rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.176);
+}
+.card-footer span {
+  background-color: rgb(50, 56, 62);
+  border-radius: 6px;
+  font-size: 10.5px;
+  text-align: center;
+  padding: 2px 8px;
+  margin-block: 4px;
+  margin-inline: 3px;
+}
+/* End Home */
+
+/* Loading Screen */
+#loading {
+  min-height: 100vh;
+  font-family: Roboto, Arial;
+  color: #adafb6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 777777777;
+}
+
+.boxes {
+  height: 32px;
+  width: 32px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  margin-top: 32px;
+  -webkit-transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+  transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+}
+.boxes .box {
+  width: 32px;
+  height: 32px;
+  top: 0px;
+  left: 0;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.boxes .box:nth-child(1) {
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+  -webkit-animation: box1 1s linear infinite;
+  animation: box1 1s linear infinite;
+}
+.boxes .box:nth-child(2) {
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-animation: box2 1s linear infinite;
+  animation: box2 1s linear infinite;
+}
+.boxes .box:nth-child(3) {
+  -webkit-transform: translate(100%, 100%);
+  transform: translate(100%, 100%);
+  -webkit-animation: box3 1s linear infinite;
+  animation: box3 1s linear infinite;
+}
+.boxes .box:nth-child(4) {
+  -webkit-transform: translate(200%, 0);
+  transform: translate(200%, 0);
+  -webkit-animation: box4 1s linear infinite;
+  animation: box4 1s linear infinite;
+}
+.boxes .box > div {
+  background: #5c8df6;
+  --translateZ: 15.5px;
+  --rotateY: 0deg;
+  --rotateX: 0deg;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5c8df6;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: rotateY(var(--rotateY)) rotateX(var(--rotateX))
+    translateZ(var(--translateZ));
+  transform: rotateY(var(--rotateY)) rotateX(var(--rotateX))
+    translateZ(var(--translateZ));
+}
+.boxes .box > div:nth-child(1) {
+  top: 0;
+  left: 0;
+  background: #5c8df6;
+}
+.boxes .box > div:nth-child(2) {
+  background: #145af2;
+  right: 0;
+  --rotateY: 90deg;
+}
+.boxes .box > div:nth-child(3) {
+  background: #447cf5;
+  --rotateX: -90deg;
+}
+.boxes .box > div:nth-child(4) {
+  background: #dbe3f4;
+  top: 0;
+  left: 0;
+  --translateZ: -90px;
+}
+@keyframes box1 {
+  0%,
+  50% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(200%, 0);
+  }
+}
+@keyframes box2 {
+  0% {
+    transform: translate(0, 100%);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+@keyframes box3 {
+  0%,
+  50% {
+    transform: translate(100%, 100%);
+  }
+  100% {
+    transform: translate(0, 100%);
+  }
+}
+@keyframes box4 {
+  0% {
+    transform: translate(200%, 0);
+  }
+  50% {
+    transform: translate(200%, 100%);
+  }
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
+/* End Loading Screen */
+
+/* Up button */
+#upBtn {
+  color: #dbe3f4;
+  position: fixed;
+  right: 1%;
+  bottom: 50px;
+}
+#upBtn:hover{
+  transform: translateY(-1px) scale(1.01);
+  cursor: pointer;
+}
+#upBtn > div {
+  border: 1px solid #dbe3f4;
+  display: inline;
+  padding: 3px ;
+  border-radius: 100px;
+}
+#upBtn > div span {
+  font-weight: 700;
+}
+/* End Up button */
+
